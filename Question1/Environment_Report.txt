@@ -1,0 +1,75 @@
+Question 1 – Linux Environment Verification
+
+============================================
+
+Command:
+whoami
+
+Output:
+durgesh-kumar
+
+Observation:
+The whoami command displays the username of the currently logged-in user. It confirms the account currently being used.
+
+------------------------------------------------------------
+
+Command:
+groups
+
+Output:
+durgesh-kumar adm cdrom sudo dip plugdev users lpadmin docker
+
+Observation:
+The groups command lists all groups associated with the current user. These groups determine the permissions and access rights available.
+
+------------------------------------------------------------
+
+Command:
+echo $SHELL
+
+Output:
+/usr/bin/fish
+
+Observation:
+The echo $SHELL command displays the current login shell. In this system, the Fish shell is being used instead of Bash.
+
+------------------------------------------------------------
+
+Command:
+pwd
+
+Output:
+/home/durgesh-kumar/Linux-Lab/Question1
+
+Observation:
+The pwd command displays the absolute path of the current working directory.
+
+------------------------------------------------------------
+
+Command:
+ls -la
+
+Output:
+total 8
+drwxrwxr-x 2 durgesh-kumar durgesh-kumar 4096 Jun 28 18:20 ./
+drwxrwxr-x 7 durgesh-kumar durgesh-kumar 4096 Jun 28 18:20 ../
+-rw-rw-r-- 1 durgesh-kumar durgesh-kumar 0 Jun 28 18:20 Environment_Report.txt
+
+Observation:
+The ls -la command lists all files, including hidden files, and displays permissions, ownership, and file details.
+
+------------------------------------------------------------
+
+Command:
+ping -c 4 google.com
+
+Output:
+4 packets transmitted, 4 received, 0% packet loss
+
+Observation:
+The ping command successfully verified network connectivity. The system was able to communicate with the remote server without packet loss.
+
+============================================================
+
+Conclusion:
+The Linux environment is functioning correctly. User information, shell, working directory, workspace contents, and network connectivity were successfully verified.

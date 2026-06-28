@@ -1,0 +1,127 @@
+Question 2 – Secure Project Workspace Setup
+
+==================================================
+
+Command:
+mkdir ProjectWorkspace
+
+Observation:
+Created a secure workspace directory to store project-related files and folders.
+
+--------------------------------------------------
+
+Command:
+mkdir Documents SourceCode Backup
+
+Observation:
+Created separate directories for documentation, source code, and backup files to keep the project organized.
+
+--------------------------------------------------
+
+Command:
+touch project_plan.txt README.md
+
+Observation:
+Created two empty files to store the project plan and project documentation.
+
+--------------------------------------------------
+
+Command:
+ls -R
+
+Output:
+Backup/
+Documents/
+SourceCode/
+project_plan.txt
+README.md
+
+Observation:
+The workspace structure was successfully created with the required folders and files.
+
+--------------------------------------------------
+
+Command:
+ls -l
+
+Output (Before Permission Change):
+drwxrwxr-x Backup
+drwxrwxr-x Documents
+-rw-rw-r-- project_plan.txt
+-rw-rw-r-- README.md
+drwxrwxr-x SourceCode
+
+Observation:
+The ls -l command displayed the default permissions, ownership, and file details for all files and directories.
+
+--------------------------------------------------
+
+Command:
+chmod 600 README.md
+
+Observation:
+Changed the permissions so only the file owner can read and write README.md.
+
+--------------------------------------------------
+
+Command:
+chmod 640 project_plan.txt
+
+Observation:
+Allowed the owner to read and write the file while allowing the group only read access.
+
+--------------------------------------------------
+
+Command:
+ls -l
+
+Output (After Permission Change):
+drwxrwxr-x Backup
+drwxrwxr-x Documents
+-rw-r----- project_plan.txt
+-rw------- README.md
+drwxrwxr-x SourceCode
+
+Observation:
+The permission changes were successfully applied using chmod.
+
+--------------------------------------------------
+
+Command:
+stat README.md
+
+Observation:
+The stat command displayed detailed metadata including inode number, permissions, owner, group, timestamps, and file size.
+
+--------------------------------------------------
+
+Command:
+umask
+
+Output:
+0002
+
+Observation:
+The umask value determines the default permissions assigned to newly created files and directories.
+
+==================================================
+
+Ownership Details
+
+Owner:
+durgesh-kumar
+
+Group:
+durgesh-kumar
+
+==================================================
+
+Explanation of How Permissions Protect Project Data
+
+Linux permissions restrict unauthorized access to files and directories. By assigning appropriate read, write, and execute permissions, sensitive project files remain protected while allowing authorized users to access the required resources.
+
+==================================================
+
+Conclusion
+
+The project workspace was successfully created. File permissions were modified using chmod, ownership information was verified, the default umask was identified, and the Linux permission model was demonstrated successfully.

@@ -1,0 +1,60 @@
+Question 5 – Storage Health Assessment and Documentation
+
+==================================================
+
+Command:
+lsblk
+
+Observation:
+The lsblk command listed all available storage devices, partitions, and their mount points. The primary storage device is an NVMe SSD (nvme0n1) with multiple partitions.
+
+--------------------------------------------------
+
+Command:
+df -h
+
+Observation:
+The df -h command displayed mounted file systems and their disk usage in a human-readable format. The root partition has approximately 42 GB of free space available and is 42% utilized.
+
+--------------------------------------------------
+
+Command:
+df -i
+
+Observation:
+The df -i command displayed inode usage. The root file system is using approximately 10% of its available inodes, indicating no inode exhaustion.
+
+--------------------------------------------------
+
+Command:
+du -sh .
+
+Output:
+8.0K
+
+Observation:
+The current Question5 directory occupies only 8.0 KB of storage, indicating minimal disk usage.
+
+==================================================
+
+Storage Health Observations
+
+• The system uses an NVMe SSD as the primary storage device.
+• The root partition has sufficient free disk space available.
+• Inode utilization is low (10%), indicating efficient file system usage.
+• No storage-related issues were observed during the assessment.
+
+==================================================
+
+Recommendations
+
+• Regularly monitor disk usage using df -h.
+• Periodically check inode utilization using df -i.
+• Remove unnecessary files to maintain adequate free space.
+• Monitor storage health and create regular backups of important data.
+
+==================================================
+
+Conclusion
+
+The storage assessment indicates that the system has healthy storage utilization with adequate free space and low inode usage. The storage resources are suitable for deploying additional applications while maintaining good performance.

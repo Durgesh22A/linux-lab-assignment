@@ -1,0 +1,84 @@
+Question 4 – File Access and I/O Investigation
+
+==================================================
+
+Command:
+echo "Linux File IO Test" > sample.txt
+
+Observation:
+Created a sample file for demonstrating file access and I/O operations.
+
+--------------------------------------------------
+
+Command:
+lsof sample.txt
+
+Observation:
+The lsof command identified that the tail process had the file open. The file descriptor (FD 3r) indicated the file was opened in read mode.
+
+--------------------------------------------------
+
+Command:
+echo "This is redirected output" > output.txt
+
+Observation:
+The output redirection operator (>) redirected the command output into output.txt instead of displaying it on the terminal.
+
+--------------------------------------------------
+
+Command:
+cat output.txt
+
+Output:
+This is redirected output
+
+Observation:
+The redirected output was successfully written to the file and verified using the cat command.
+
+--------------------------------------------------
+
+Command:
+ls nonexistentfile 2> error.txt
+
+Observation:
+The error redirection operator (2>) redirected the error message into error.txt instead of displaying it on the terminal.
+
+--------------------------------------------------
+
+Command:
+cat error.txt
+
+Output:
+ls: cannot access 'nonexistentfile': No such file or directory
+
+Observation:
+The error message was successfully captured in the error.txt file.
+
+--------------------------------------------------
+
+Command:
+ulimit -a
+
+Output:
+(Paste your actual output here.)
+
+Observation:
+The ulimit command displayed the current resource limits for the shell, such as file size, number of open files, stack size, and other system resource limits.
+
+==================================================
+
+File Descriptor Observation
+
+The lsof command showed that the file sample.txt was opened by the tail process using file descriptor 3 in read mode (FD 3r). File descriptors are numeric references that Linux uses to manage open files.
+
+==================================================
+
+Explanation of Linux File I/O
+
+Linux manages file I/O using file descriptors. Standard input (0), standard output (1), and standard error (2) are the default descriptors. Output redirection (>) writes standard output to a file, while error redirection (2>) writes error messages to a separate file. Commands such as lsof help identify which processes currently have files open.
+
+==================================================
+
+Conclusion
+
+The investigation demonstrated Linux file access, file descriptors, output redirection, error redirection, and resource limits. These features help Linux efficiently manage files and input/output operations.

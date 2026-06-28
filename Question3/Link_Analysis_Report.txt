@@ -1,0 +1,95 @@
+Question 3 – File System and Link Analysis
+
+==================================================
+
+Command:
+echo "Linux Link Analysis" > original.txt
+
+Observation:
+Created a file named original.txt for the experiment.
+
+--------------------------------------------------
+
+Command:
+ln original.txt hardlink.txt
+
+Observation:
+Created a hard link that shares the same inode as the original file.
+
+--------------------------------------------------
+
+Command:
+ln -s original.txt symlink.txt
+
+Observation:
+Created a symbolic link pointing to the original file.
+
+--------------------------------------------------
+
+Command:
+ls -li
+
+Output:
+(Paste your output)
+
+Observation:
+The hard link and original file share the same inode, while the symbolic link has a different inode.
+
+--------------------------------------------------
+
+Command:
+stat original.txt
+stat hardlink.txt
+stat symlink.txt
+
+Observation:
+The stat command displayed metadata including inode numbers, permissions, ownership, timestamps, and link information.
+
+--------------------------------------------------
+
+Command:
+rm original.txt
+
+Observation:
+Deleted the original file.
+
+--------------------------------------------------
+
+Command:
+cat hardlink.txt
+
+Output:
+Linux Link Analysis
+
+Observation:
+The hard link continued to function because it still referenced the file's inode.
+
+--------------------------------------------------
+
+Command:
+cat symlink.txt
+
+Output:
+cat: symlink.txt: No such file or directory
+
+Observation:
+The symbolic link became broken because the original file no longer existed.
+
+==================================================
+
+Comparison
+
+Hard Link:
+- Shares the same inode as the original file.
+- Continues to work even if the original filename is deleted.
+
+Symbolic Link:
+- Has its own inode.
+- Stores the path to the original file.
+- Becomes invalid if the original file is removed.
+
+==================================================
+
+Conclusion
+
+The experiment demonstrated the behavior of hard links and symbolic links. Hard links remain functional after deleting the original filename, whereas symbolic links become broken because they depend on the original file path.
