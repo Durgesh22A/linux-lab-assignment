@@ -31,10 +31,10 @@ ls -li
 
 Output:
 total 8
-3412642 -rw-rw-r-- 2 nitin-kumar durgesh-kumar 20 Jun 28 18:42 hardlink.txt
-3414570 -rw-rw-r-- 1 nitin-kumar durgesh-kumar  0 Jun 28 18:41 Link_Analysis_Report.txt
-3412642 -rw-rw-r-- 2 nitin-kumar durgesh-kumar 20 Jun 28 18:42 original.txt
-3414733 lrwxrwxrwx 1 nitin-kumar durgesh-kumar 12 Jun 28 18:42 symlink.txt -> original.txt
+3412642 -rw-rw-r-- 2 durgesh-kumar 20 Jun 28 18:42 hardlink.txt
+3414570 -rw-rw-r-- 1 durgesh-kumar  0 Jun 28 18:41 Link_Analysis_Report.txt
+3412642 -rw-rw-r-- 2 durgesh-kumar 20 Jun 28 18:42 original.txt
+3414733 lrwxrwxrwx 1 durgesh-kumar 12 Jun 28 18:42 symlink.txt -> original.txt
 
 Observation:
 The hard link and original file share the same inode, while the symbolic link has a different inode.
