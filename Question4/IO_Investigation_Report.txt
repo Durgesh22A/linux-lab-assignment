@@ -60,7 +60,21 @@ Command:
 ulimit -a
 
 Output:
-(Paste your actual output here.)
+Maximum size of core files created                                     (kB, -C) 0
+Maximum size of a process's data segment                               (kB, -d) unlimited
+Control of maximum nice priority                                           (-e) 0
+Maximum size of files created by the shell                             (kB, -f) unlimited
+Maximum number of pending signals                                          (-i) 61484
+Maximum size that may be locked into memory                            (kB, -l) 1997800
+Maximum resident set size                                              (kB, -m) unlimited
+Maximum number of open file descriptors                                    (-n) 1024
+Maximum bytes in POSIX message queues                                  (kB, -q) 800
+Maximum realtime scheduling priority                                       (-r) 0
+Maximum stack size                                                     (kB, -s) 8192
+Maximum amount of CPU time in seconds                             (seconds, -t) unlimited
+Maximum number of processes available to current user                      (-u) 61484
+Maximum amount of virtual memory available to each process             (kB, -v) unlimited
+Maximum contiguous realtime CPU time                                       (-y) unlimited
 
 Observation:
 The ulimit command displayed the current resource limits for the shell, such as file size, number of open files, stack size, and other system resource limits.
